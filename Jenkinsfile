@@ -8,24 +8,24 @@ pipeline {
     }
 	stage('Upload Artifact') {
 	  steps {
-	  rtDownload (
-			serverId: 'jenkins-artifactory-server',
-			spec: '''{
-				  "files": [
-					{
-					  "pattern": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/",
-					  "target": "snapshot-app/"
-					}
-				 ]
-			}''',
+	  //rtDownload (
+			//serverId: 'jenkins-artifactory-server',
+			//spec: '''{
+			//	  "files": [
+			//		{
+			//		  "pattern": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/",
+			//		  "target": "snapshot-app/"
+			//		}
+			//	 ]
+			//}''',
 		 
 			// Optional - Associate the uploaded files with the following custom build name and build number,
 			// as build artifacts.
 			// If not set, the files will be associated with the default build name and build number (i.e the
 			// the Jenkins job name and number).
-			buildName: 'AppTest',
-			buildNumber: '1'
-		)
+			//buildName: 'AppTest',
+			//buildNumber: '1'
+		//)
 		rtUpload (
 			serverId: 'jenkins-artifactory-server',
 			spec: '''{
