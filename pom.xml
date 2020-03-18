@@ -32,11 +32,12 @@
 					    </standaloneDeployment> -->
 				 	<cloudHubDeployment>
 				      <uri>https://anypoint.mulesoft.com</uri>
-				      <muleVersion>4.2.1</muleVersion>
-				      <username>zdthm_001</username>
+				      <muleVersion>4.2.2</muleVersion>
+				      <username>zdthm_001</username>			  
 				      <password>Cc123456</password>
-				      <applicationName>testAPP</applicationName>
-				      <environment>Design</environment>
+				      <applicationName>testAPP-Sammaniv</applicationName>
+				      <environment>Sandbox</environment>
+					  <businessGroup>gg</businessGroup>
 				    </cloudHubDeployment>
 				</configuration>
 			</plugin>
