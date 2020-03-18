@@ -3,7 +3,7 @@ pipeline {
   stages {
 	stage('Unit Test') { 
       steps {
-        bat 'mvn clean test -f maventest'
+        bat 'mvn clean test'
       }
     }
 	stage('Upload Artifact') {
@@ -14,7 +14,7 @@ pipeline {
 				  "files": [
 					{
 					  "pattern": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/",
-					  "target": "snapshot-cai/"
+					  "target": "snapshot-app/"
 					}
 				 ]
 			}''',
@@ -23,7 +23,7 @@ pipeline {
 			// as build artifacts.
 			// If not set, the files will be associated with the default build name and build number (i.e the
 			// the Jenkins job name and number).
-			buildName: 'CaiTest',
+			buildName: 'AppTest',
 			buildNumber: '1'
 		)
 		rtUpload (
@@ -31,7 +31,7 @@ pipeline {
 			spec: '''{
 				  "files": [
 					{
-					  "pattern": "maventest/target/*maventest*.jar",
+					  "pattern": "target/*maventest*.jar",
 					  "target": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/"
 					}
 				 ]
@@ -41,14 +41,14 @@ pipeline {
 			// as build artifacts.
 			// If not set, the files will be associated with the default build name and build number (i.e the
 			// the Jenkins job name and number).
-			buildName: 'CaiTest',
+			buildName: 'AppTest',
 			buildNumber: '1'
 		)
 	  }
 	}
     stage('Deploy Standalone') { 
       steps {
-        bat 'mvn clean package deploy -DmuleDeploy -f maventest'
+        bat 'mvn clean package deploy -DmuleDeploy'
       }
     }
   }

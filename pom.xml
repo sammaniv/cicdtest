@@ -26,18 +26,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					    <standaloneDeployment>
+					    <!--<standaloneDeployment>
 					      <muleHome>C:/Users/info/Downloads/mule-ee-distribution-standalone-4.2.1-hf1/mule-enterprise-standalone-4.2.1-hf1</muleHome>
 					      <muleVersion>4.2.1</muleVersion>
-					    </standaloneDeployment>
-				<!-- 	<cloudHubDeployment>
+					    </standaloneDeployment> -->
+				 	<cloudHubDeployment>
 				      <uri>https://anypoint.mulesoft.com</uri>
 				      <muleVersion>4.2.1</muleVersion>
-				      <username>zdthm004</username>
+				      <username>zdthm_001</username>
 				      <password>Cc123456</password>
-				      <applicationName>testCai</applicationName>
-				      <environment>Sandbox</environment>
-				    </cloudHubDeployment> -->
+				      <applicationName>testAPP</applicationName>
+				      <environment>Design</environment>
+				    </cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
