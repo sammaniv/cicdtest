@@ -3,8 +3,12 @@ pipeline {
   stages {
 	stage('Unit Test') { 
       steps {
-        //bat 'mvn clean test'
-		bat 'mvn test'
+        bat 'mvn clean test'
+      }
+    }
+	stage('Build Artifact') { 
+      steps {
+		bat 'mvn package'
       }
     }
 	stage('Upload Artifact') {
