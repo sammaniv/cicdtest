@@ -42,14 +42,13 @@ pipeline {
 			spec: '''{
 				  "files": [
 					{
-					  //"pattern": "target/maventest*.jar",
 					  "pattern": "target/${artifactId}-${artifactVersion}-${artifactName}.jar",
-					  //"target": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/"
 					  "target": "libs-snapshot-local/${groupId}/${artifactId}/${artifactVersion}/"
 					}
 				 ]
 			}''',
-		 
+			//"pattern": "target/maventest*.jar",
+			//"target": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/"
 			// Optional - Associate the uploaded files with the following custom build name and build number,
 			// as build artifacts.
 			// If not set, the files will be associated with the default build name and build number (i.e the
