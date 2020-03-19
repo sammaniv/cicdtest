@@ -1,5 +1,11 @@
 pipeline {
   agent any
+  environment {
+	  groupId = readMavenPom().getGroupId().replaceAll('\\.','/')
+	  artifactId = readMavenPom().getArtifactId()
+	  artifactVersion = readMavenPom().getVersion()
+	  artifactName = readMavenPom().getPackaging()
+  }
   stages {
 	stage('Unit Test') { 
       steps {
@@ -36,8 +42,10 @@ pipeline {
 			spec: '''{
 				  "files": [
 					{
-					  "pattern": "target/maventest*.jar",
-					  "target": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/"
+					  //"pattern": "target/maventest*.jar",
+					  "pattern": "target/${artifactId}-${artifactVersion}-${artifactName}.jar",
+					  //"target": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/"
+					  "target": "libs-snapshot-local/${groupId}/${artifactId}/${artifactVersion}/"
 					}
 				 ]
 			}''',
