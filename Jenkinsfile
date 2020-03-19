@@ -31,7 +31,7 @@ pipeline {
 			spec: '''{
 				  "files": [
 					{
-					  "pattern": "target/maventest-1.0.0-SNAPSHOT-mule-application.jar",
+					  "pattern": "target/*.jar",
 					  "target": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/"
 					}
 				 ]
