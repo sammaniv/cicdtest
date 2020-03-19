@@ -3,7 +3,8 @@ pipeline {
   stages {
 	stage('Unit Test') { 
       steps {
-        bat 'mvn clean test'
+        //bat 'mvn clean test'
+		bat 'mvn test'
       }
     }
 	stage('Upload Artifact') {
@@ -31,7 +32,7 @@ pipeline {
 			spec: '''{
 				  "files": [
 					{
-					  "pattern": "target/*.jar",
+					  "pattern": "target/maventest*.jar",
 					  "target": "libs-snapshot-local/com/mycompany/maventest/1.0.0-SNAPSHOT/"
 					}
 				 ]
